@@ -1,4 +1,3 @@
-# Gym-Medium-Post
-Basic OpenAI gym environment. 
+# Self-driving-toy-example
 
-Resource for the [Medium series on creating OpenAI Gym Environments with PyBullet](https://medium.com/@gerardmaggiolino/creating-openai-gym-environments-with-pybullet-part-1-13895a622b24). 
+![](https://github.com/skywalker0803r/Self-driving-toy-example/blob/main/img/car_train.gif)
