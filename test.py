@@ -18,7 +18,7 @@ def main():
         
         # game loop
         while not done:
-            time.sleep(1/60)
+            #time.sleep(1/60)
             env.render()
             action ,_ = model.predict(obs)
             obs, reward, done, info = env.step(action)

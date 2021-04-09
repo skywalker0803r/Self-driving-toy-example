@@ -47,15 +47,18 @@ class SimpleDrivingEnv(gym.Env):
 
     def step(self, action):
         reward = 0
-        reward += 1
         self.car.apply_action(action)
         p.stepSimulation()
         car_ob = self.car.get_observation()
         pos = car_ob[:2]
         pos_x ,pos_y = pos[0] ,pos[1]
-        
+        vel = car_ob[-2:]
+        vel_x,vel_y = vel[0],vel[1]
+        # 如果有在開車 reward += 1
+        if vel_x != 0 or vel_y != 0:
+            reward += 1
         # 掉落平台則遊戲結束且受到負reward
-        if (car_ob[0] >= 10 or car_ob[0] <= -10 or car_ob[1] >= 10 or car_ob[1] <= -10):
+        if (car_ob[0] >= 9 or car_ob[0] <= -9 or car_ob[1] >= 9 or car_ob[1] <= -9):
             self.done = True
             reward -= 9999
         
